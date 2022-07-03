@@ -4,8 +4,8 @@ jobs:
   build-job:
     runs-on: ubuntu-latest
     container: docker:19.03.12
-    services:
-      - docker:19.03.12-dind
+    # services:
+    #   - docker:19.03.12-dind
     steps:
       - run: echo $CR_PAT | docker login ghcr.io -u USERNAME --password-stdin
       - run: docker build -t ghcr.io/makquel/python-linting .
